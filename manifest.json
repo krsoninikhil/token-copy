@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Bearer Token Copier",
+  "version": "1.0",
+  "description": "Captures and copies Bearer tokens from API calls in Authorization header for same origin",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bearer Token Copier"
+  }
+}

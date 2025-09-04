@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bearer Token Copier</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔑 Bearer Token Copier</h1>
+            <p class="subtitle">Captured tokens from API requests</p>
+        </div>
+        
+        <div class="current-origin" id="currentOrigin">
+            <div class="origin-info">
+                <span class="origin-label">Current Origin:</span>
+                <span class="origin-url" id="originUrl">Loading...</span>
+            </div>
+            <div class="current-token" id="currentTokenSection" style="display: none;">
+                <div class="token-header">
+                    <span class="token-label">Latest Token:</span>
+                    <button class="copy-btn" id="copyCurrentToken" title="Copy token">
+                        📋 Copy
+                    </button>
+                </div>
+                <div class="token-preview" id="currentTokenPreview"></div>
+                <div class="token-meta" id="currentTokenMeta"></div>
+            </div>
+            <div class="no-token" id="noTokenMessage" style="display: none;">
+                <span class="no-token-text">No token captured for this origin yet</span>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="all-tokens-section">
+            <div class="section-header">
+                <h3>All Captured Tokens</h3>
+                <button class="clear-btn" id="clearAllTokens" title="Clear all tokens">
+                    🗑️ Clear All
+                </button>
+            </div>
+            
+            <div class="tokens-list" id="tokensList">
+                <div class="loading" id="loadingMessage">Loading tokens...</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="shortcut-info">
+                <span class="shortcut-text">💡 Tip: Use <kbd>Ctrl+Shift+T</kbd> (or <kbd>Cmd+Shift+T</kbd> on Mac) to quickly copy current origin's token</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
